@@ -165,6 +165,9 @@ int main(){
 
     while (window.isOpen()) {
         float deltaTime = clock.restart().asSeconds();
+        if (deltaTime > 0.05f){
+            deltaTime = 0.05f;
+        }
         while (const std::optional<sf::Event> event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
             window.close();
